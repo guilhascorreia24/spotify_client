@@ -1,7 +1,12 @@
-home
+
+{% extends "main.html" %}
+{% block content %}
+<h1>SpotifyCracks</h1>
 {% if logged %}
     {% include "logout.html" %}
     <a href="{% url 'profile' %}" class="btn btn-primary">profile</a>
+    <a href="{% url 'track' %}" class="btn btn-primary">Track</a>
 {% else %}
     {% include "login.html" %}
 {% endif %}
+{% endblock %}
