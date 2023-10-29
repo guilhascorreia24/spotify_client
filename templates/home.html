@@ -1,0 +1,7 @@
+home
+{% if logged %}
+    {% include "logout.html" %}
+    <a href="{% url 'profile' %}" class="btn btn-primary">profile</a>
+{% else %}
+    {% include "login.html" %}
+{% endif %}

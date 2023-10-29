@@ -1,0 +1,11 @@
+<div class="recent-playlists">
+    <h2>Recent Playlists</h2>
+    <ul>
+        {% for playlist in recent_playlists %}
+            <li>
+                <img src="{{ playlist.image_url }}" alt="{{ playlist.name }}">
+                <p>{{ playlist.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

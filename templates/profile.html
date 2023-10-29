@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Profile</title>
+</head>
+<body>
+    <h1>My Spotify Profile</h1>
+    <div class="profile">
+        <img src="user_profile_image_url" alt="Profile Image">
+        <h2>User Information</h2>
+        <p>Name: {{ user_name }}</p>
+        <p>Email: {{ user_email }}</p>
+        <!-- Add more user information here -->
+    </div>
+
+
+    <!-- Add more sections for user data as needed -->
+
+    <a href="{% url 'logout' %}">Log Out</a>
+</body>
+</html>

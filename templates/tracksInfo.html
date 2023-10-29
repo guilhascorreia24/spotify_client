@@ -1,0 +1,11 @@
+<div class="top-tracks">
+    <h2>Top Tracks</h2>
+    <ul>
+        {% for track in top_tracks %}
+            <li>
+                <img src="{{ track.image_url }}" alt="{{ track.name }}">
+                <p>{{ track.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
