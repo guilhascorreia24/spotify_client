@@ -1,0 +1,42 @@
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+<script>
+    // Initialize Spotify Web Playback SDK
+    window.onSpotifyWebPlaybackSDKReady = () => {
+        console.log("{{access_token}}")
+        const token = '{{access_token}}';  // Use the user's Spotify access token
+        const player = new Spotify.Player({
+            name: 'myApp',
+            getOAuthToken: cb => { cb(token); }
+        });
+
+
+        // Event listener for populating the trackSelector options
+        const trackList = document.getElementById('trackList');
+        trackList.addEventListener('click', event => {
+                if (event.target.tagName === 'IMG') {
+                    console.log(event.target.getAttribute('data-uri'));
+                    const trackUri = event.target.getAttribute('data-uri');
+                    player.connect().then(success => {
+                        if (success) {
+                            console.log("sucess")
+                            return player._options.getOAuthToken(token => {
+                                fetch(`https://api.spotify.com/v1/me/player/play?uris=${trackUri}`, {
+                                    method: 'PUT',
+                                    headers: {
+                                        'Authorization': `Bearer ${token}`,
+                                    },
+                                }).catch(error => {
+                                    console.error('Error:', error);
+                                });
+                            });
+                        }
+                    }).catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+            });
+
+            player.connect();
+        };
+</script>
+</script>

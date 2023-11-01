@@ -4,5 +4,6 @@ from . import views
 
 name_app="TrackApp"
 urlpatterns = [
-    path('',views.Profile,name='track'),
+    path('',views.Tracks,name='library'),
+    path('playlist/<str:id>',views.Playlist,name='playlist')
 ]

@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Spotify Profile</title>
+    <style>
+        #music-player-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            /* Full width */
+            background-color: #fff;
+            /* Background color for the player */
+            z-index: 1000;
+            /* Ensure it appears above other content */
+            /* Add other styling as needed */
+        }
+    </style>
 </head>
+
 <body>
     {% block content %}
     {% endblock%}
+    {% block player %}
+    {% endblock %}
 
 
     <!-- Add more sections for user data as needed -->
 
     <a href="{% url 'logout' %}">Log Out</a>
 </body>
+
 </html>

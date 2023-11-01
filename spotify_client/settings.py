@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'AuthenticationAPP',
     'mainApp',
     'ProfileApp',
-    'TrackApp'
+    'TrackApp',
+    'PlayerApp'
 ]
 SPOTIFY_CLIENT_ID = '858457b5ac6a47fda5c65e2effc1c950'
 SPOTIFY_CLIENT_SECRET = '51cb7df89ad24a13813b358250ae9a9a'

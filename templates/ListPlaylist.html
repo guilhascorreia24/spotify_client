@@ -1,11 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
 <div class="recent-playlists">
-    <h2>Recent Playlists</h2>
-    <ul>
-        {% for playlist in recent_playlists %}
+    <h2>Playlist {{ playlist.name }}</h2>
+    <ul id="trackList">
+        {% for song in playlist.songs %}
             <li>
-                <img src="{{ playlist.image_url }}" alt="{{ playlist.name }}">
-                <p>{{ playlist.name }}</p>
-            </li>
+                
+                <img src="{{ song.fields.image_url }}" alt="{{ song.fields.title }}" data-uri="spotify:track:{{song.pk}}">
+                <p>{{ song.fields.artists }}</p>
+                <p>{{ song.fields.release_date }}</p>
+                <p>{{ song.fields.album }}</p>
+            </li>   
         {% endfor %}
     </ul>
 </div>
+{% include 'player.html' %}
+{% endblock %}
