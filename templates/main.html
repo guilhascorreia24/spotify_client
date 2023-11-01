@@ -4,17 +4,28 @@
 <head>
     <title>Spotify Profile</title>
     <style>
-        #music-player-container {
+        .music-player-container {
             position: fixed;
             bottom: 0;
-            right: 0;
+            right:0;
             width: 50%;
-            /* Full width */
-            background-color: #fff;
+
             /* Background color for the player */
             z-index: 1000;
             /* Ensure it appears above other content */
             /* Add other styling as needed */
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #1db954;
+            width: 0;
         }
     </style>
 </head>

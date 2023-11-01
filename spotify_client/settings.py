@@ -62,8 +62,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'favicon.middleware.FaviconMiddleware'
 ]
-
+STATICFILES_DIRS = [
+    'static',
+]
 ROOT_URLCONF = 'spotify_client.urls'
 
 TEMPLATES = [

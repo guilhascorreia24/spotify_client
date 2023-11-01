@@ -1,3 +1,18 @@
+<div class="music-player-container">
+    <div class="music-info" style="text-align: end;">
+        <img id="track-image" src="" alt="Music Image" style="height: 50%;width: 50%;">
+        <h2 id="track-title"></h2>
+    </div>
+    <div class="music-controls" style="text-align: end;">
+        <button id="play-button">Play</button>
+        <button id="pause-button">Pause</button>
+        <button id="next-button">Next</button>
+        <button id="previous-button">Previous</button>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+</div>
 <script src="https://sdk.scdn.co/spotify-player.js"></script>
 <script>
     // Initialize Spotify Web Playback SDK
@@ -13,30 +28,25 @@
         // Event listener for populating the trackSelector options
         const trackList = document.getElementById('trackList');
         trackList.addEventListener('click', event => {
-                if (event.target.tagName === 'IMG') {
-                    console.log(event.target.getAttribute('data-uri'));
-                    const trackUri = event.target.getAttribute('data-uri');
-                    player.connect().then(success => {
-                        if (success) {
-                            console.log("sucess")
-                            return player._options.getOAuthToken(token => {
-                                fetch(`https://api.spotify.com/v1/me/player/play?uris=${trackUri}`, {
-                                    method: 'PUT',
-                                    headers: {
-                                        'Authorization': `Bearer ${token}`,
-                                    },
-                                }).catch(error => {
-                                    console.error('Error:', error);
-                                });
-                            });
-                        }
-                    }).catch(error => {
-                        console.error('Error:', error);
-                    });
-                }
-            });
+            if (event.target.tagName === 'IMG') {
+                console.log(event.target.getAttribute('data-uri'));
+                const trackUri = event.target.getAttribute('data-uri');
+                player.connect().then(success => {
+                    if (success) {
+                        console.log("sucess")
+                        // Add your event listeners and player control logic here
+                                document.getElementById('track-image').src = event.target.getAttribute('src');
+                                document.getElementById('track-title').textContent = event.target.getAttribute('alt');
+                            
+                        //return player.play(trackUri);
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        });
 
-            player.connect();
-        };
+        player.connect();
+    };
 </script>
 </script>

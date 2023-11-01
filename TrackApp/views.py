@@ -47,4 +47,5 @@ def Playlist(request,id):
     #content['access_token']=request.session['access_token']
     # Serialize the songs associated with the playlist
     #return JsonResponse(content, safe=False)
+    print(request.session['access_token'])
     return render(request,"ListPlaylist.html",{'playlist':content,'access_token':request.session['access_token']}); 
