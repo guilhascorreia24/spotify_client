@@ -20,11 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('auth/', include('social_django.urls', namespace='social')),
     path('auth/',include('AuthenticationAPP.urls')),
     path('',include('mainApp.urls')),
-    path('profile',include('ProfileApp.urls')),
-    path('tracks',include("TrackApp.urls")),
-    #path('song',include("PlayerApp.urls"))
-    path('favicon.ico',lambda x: HttpResponse(status=204))
+    path('history/',include('history.urls'))
 ]

@@ -3,5 +3,5 @@ client_SECRET='51cb7df89ad24a13813b358250ae9a9a'   # Fill in with the value from
 redirect_URI="http://127.0.0.1:8000/auth/callback"  # Fill in with the port you want to use -- MUST be one of the 
                                                                    # redirect urls as in Spotify Developer Dashboard 
 username=''        # Fill in with Spotify username you want to use                                                                                                      
-scope='ugc-image-upload user-read-private user-read-email'
+scope='ugc-image-upload user-read-private user-read-email user-read-playback-state user-read-currently-playing user-library-read user-modify-playback-state playlist-read-private playlist-read-collaborative user-read-recently-played'
 
